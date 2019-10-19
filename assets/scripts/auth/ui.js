@@ -15,6 +15,16 @@ const failureMessage = function (newText) {
   $('#message').removeClass('success')
 }
 
+const onCreateSneakerSuccess = responseData => {
+  successMessage('Nice!')
+  $('#message').css('color', 'green')
+}
+
+const onCreateSneakerFailure = () => {
+  failureMessage('Try again')
+  $('#message').css('color', 'red')
+}
+
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
   $('#message').css('color', 'green')
@@ -33,6 +43,7 @@ const onSignInSuccess = function (response) {
   $('#sign-up, #sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
+  $('#create-sneaker').show()
 }
 
 const onSignInFailure = function () {
@@ -62,6 +73,21 @@ const onSignOutFailure = function () {
   failureMessage('Sign out failed')
   $('#message').css('color', 'red')
 }
+
+$('.form').on('click', function () {
+  $(this).addClass('active')
+})
+
+$('.submit').on('click', function () {
+  $(this).parent().parent().hide(300)
+  $('.ok_message').addClass('active')
+})
+
+$('.ok_message').on('click', function () {
+  $(this).removeClass('active')
+  $('.form').removeClass('active').show()
+})
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -70,5 +96,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateSneakerSuccess,
+  onCreateSneakerFailure
 }

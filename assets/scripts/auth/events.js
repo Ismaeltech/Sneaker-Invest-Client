@@ -38,9 +38,17 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
+const onCreateSneaker = function (event) {
+  event.preventDefault()
+  api.createSneaker()
+    .then(ui.onCreateSneakerSuccess)
+    .catch(ui.onCreateSneakerFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateSneaker
 }

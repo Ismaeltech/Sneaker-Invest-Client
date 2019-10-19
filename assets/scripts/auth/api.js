@@ -2,6 +2,17 @@
 const config = require('../config')
 const store = require('../store')
 
+const createSneaker = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/sneakers',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 const signUp = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -38,9 +49,11 @@ const signOut = function () {
     }
   })
 }
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createSneaker
 }
