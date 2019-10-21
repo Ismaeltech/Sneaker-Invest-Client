@@ -77,21 +77,47 @@
     <button>Sign In</button>
 </form>
 
-<form id="change-password" >
-    <input type="password" name="passwords[old]" placeholder="Enter old password">
-    <input type="password" name="passwords[new]" placeholder="Enter new Password" >
-    <button>Change Password</button>
-</form>
-
-      <form id="sign-out" >
-        <button>Sign Out</button>
-      </form>
-
       <form id="create-sneaker">
+        <legend>Add Sneaker</legend>
         <input name="sneaker[brand]" type="text" placeholder="Brand">
         <input name="sneaker[name]"type="text" placeholder="Name" >
         <input name="sneaker[price]" min="0" type="number" placeholder="price" >
         <button type="submit">Submit</button>
       </form>
+
+      <form id="update-sneaker">
+        <input name="sneaker[brand]" type="text" placeholder="Brand">
+        <input name="sneaker[name]"type="text" placeholder="Name" >
+        <input name="sneaker[price]" min="0" type="number" placeholder="price" >
+        <input name="sneaker[id]" type="number" placeholder='Sneaker Id'>
+        <button type="submit">Edit</button>
+      </form>
+
+    <!-- <div id="content" class="content"></div> -->
+          <div>
+          <div id="sneaker-message"></div>
+        </div>
+
+      <form id="total-sneakers" >
+        <legend>Los Sneakers</legend>
+        <button type="submit">My Sneakers</button>
+
+      </form>
+      <form id="delete-sneaker" >
+        <input name="sneaker[id]" min="0" type="number" placeholder='Sneaker Id'>
+        <button type="submit">Delete Sneaker</button>
+
+      </form>
+
+      <br>
+      <form id="change-password" >
+          <input type="password" name="passwords[old]" placeholder="Enter old password">
+          <input type="password" name="passwords[new]" placeholder="Enter new Password" >
+          <button>Change Password</button>
+      </form>
+
+            <form id="sign-out" >
+              <button>Sign Out</button>
+            </form>
     </body>
 </html>

@@ -9,7 +9,53 @@ const createSneaker = function (formData) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData
+    data: {
+      'sneaker': {
+        'price': formData.sneaker.price,
+        'name': formData.sneaker.name,
+        'brand': formData.sneaker.brand,
+        'user_id': store.user.id
+      }
+    }
+  })
+}
+
+const updateSneaker = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/sneakers/' + formData.sneaker.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'sneaker': {
+        'price': formData.sneaker.price,
+        'name': formData.sneaker.name,
+        'brand': formData.sneaker.brand,
+        'user_id': store.user.id
+      }
+    }
+  })
+}
+
+const getSneaker = function () {
+  return $.ajax({
+    url: config.apiUrl + '/sneakers',
+    method: 'GET',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteSneaker = function (formData) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sneakers/' + formData.sneaker.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -55,5 +101,8 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  createSneaker
+  createSneaker,
+  updateSneaker,
+  getSneaker,
+  deleteSneaker
 }

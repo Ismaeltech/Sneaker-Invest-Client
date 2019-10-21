@@ -2,9 +2,11 @@
 const store = require('./../store')
 
 const successMessage = function (newText) {
-  $('#message').text(newText)
+  $('#message').html(newText)
+  $('#message').show(500)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('#message').fadeOut(850)
   $('form').trigger('reset')
 }
 
@@ -15,6 +17,8 @@ const failureMessage = function (newText) {
   $('#message').removeClass('success')
 }
 
+// Create sneakers
+
 const onCreateSneakerSuccess = responseData => {
   successMessage('Nice!')
   $('#message').css('color', 'green')
@@ -22,6 +26,50 @@ const onCreateSneakerSuccess = responseData => {
 
 const onCreateSneakerFailure = () => {
   failureMessage('Try again')
+  $('#message').css('color', 'red')
+}
+
+// Update sneakers
+
+const onUpdateSneakerSucccess = () => {
+  successMessage('Lit!')
+  $('#message').css('color', 'green')
+}
+
+const onUpdateSneakerFailure = () => {
+  failureMessage('Shoot!')
+  $('#message').css('color', 'red')
+}
+
+// Get sneakers
+
+const onGetSneakerSuccess = function (data) {
+  $('#sneaker-message').html('')
+  data.sneakers.forEach(sneaker => {
+    const sneakerHTML = (`
+ <p>ID: ${sneaker.id}</p>
+ <p>Brand: ${sneaker.brand}</p>
+ <p>Name: ${sneaker.name}</p>
+ <p>Price: ${sneaker.price}</p>
+  <br>
+ `)
+    $('#sneaker-message').append(sneakerHTML)
+  })
+}
+
+const onGetSneakerFailure = (data) => {
+  $('#sneaker-message').html('No Sneakers here!')
+}
+
+// delete sneaker
+const onDeleteSneakerSuccess = () => {
+  successMessage('Deleted!')
+  $('#message').css('color', 'green')
+  $('#delete-sneaker').trigger('reset')
+}
+
+const onDeleteSneakerFailure = () => {
+  failureMessage('Try again!')
   $('#message').css('color', 'red')
 }
 
@@ -44,6 +92,9 @@ const onSignInSuccess = function (response) {
   $('#change-password').show()
   $('#sign-out').show()
   $('#create-sneaker').show()
+  $('#update-sneaker').show()
+  $('#total-sneakers').show()
+  $('#delete-sneaker').show()
 }
 
 const onSignInFailure = function () {
@@ -67,26 +118,17 @@ const onSignOutSuccess = responseData => {
   $('#sign-up').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#create-sneaker').hide()
+  $('#update-sneaker').hide()
+  $('#total-sneakers').hide()
+  $('#sneaker-message').hide()
+  $('#delete-sneakers').hide()
 }
 
 const onSignOutFailure = function () {
   failureMessage('Sign out failed')
   $('#message').css('color', 'red')
 }
-
-$('.form').on('click', function () {
-  $(this).addClass('active')
-})
-
-$('.submit').on('click', function () {
-  $(this).parent().parent().hide(300)
-  $('.ok_message').addClass('active')
-})
-
-$('.ok_message').on('click', function () {
-  $(this).removeClass('active')
-  $('.form').removeClass('active').show()
-})
 
 module.exports = {
   onSignUpSuccess,
@@ -98,5 +140,11 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onCreateSneakerSuccess,
-  onCreateSneakerFailure
+  onCreateSneakerFailure,
+  onUpdateSneakerSucccess,
+  onUpdateSneakerFailure,
+  onGetSneakerSuccess,
+  onGetSneakerFailure,
+  onDeleteSneakerSuccess,
+  onDeleteSneakerFailure
 }

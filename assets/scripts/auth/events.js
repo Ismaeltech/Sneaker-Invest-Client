@@ -40,9 +40,33 @@ const onSignOut = function (event) {
 
 const onCreateSneaker = function (event) {
   event.preventDefault()
-  api.createSneaker()
+  const formData = getFormFields(event.target)
+  api.createSneaker(formData)
     .then(ui.onCreateSneakerSuccess)
     .catch(ui.onCreateSneakerFailure)
+}
+
+const onUpdateSneaker = function (event) {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.updateSneaker(formData)
+    .then(ui.onUpdateSneakerSucccess)
+    .catch(ui.onUpdateSneakerFailure)
+}
+
+const onGetSneaker = function (event) {
+  event.preventDefault()
+  api.getSneaker()
+    .then(ui.onGetSneakerSuccess)
+    .catch(ui.onGetSneakerFailure)
+}
+
+const onDeleteSneaker = function (event) {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.deleteSneaker(formData)
+    .then(ui.onDeleteSneakerSuccess)
+    .catch(ui.onDeleteSneakerFailure)
 }
 
 module.exports = {
@@ -50,5 +74,8 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateSneaker
+  onCreateSneaker,
+  onUpdateSneaker,
+  onGetSneaker,
+  onDeleteSneaker
 }

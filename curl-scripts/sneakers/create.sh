@@ -9,8 +9,8 @@ curl "http://localhost:4741/sneakers" \
     "sneaker": {
       "price": "'"${PRICE}"'",
       "name": "'"${NAME}"'",
-      "user_id": "'"${USER_ID}"'",
-      "brand": "'"${BRAND}"'"
+      "brand": "'"${BRAND}"'",
+      "user_id": "'"${ID}"'"
     }
   }'
 

@@ -9,6 +9,9 @@ const authEvents = require('./auth/events')
 
 $(() => {
   $('#create-sneaker').hide()
+  $('#update-sneaker').hide()
+  $('#total-sneakers').hide()
+  $('#delete-sneaker').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -16,4 +19,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#create-sneaker').on('submit', authEvents.onCreateSneaker)
+  $('#update-sneaker').on('submit', authEvents.onUpdateSneaker)
+  $('#total-sneakers').on('submit', authEvents.onGetSneaker)
+  $('#delete-sneaker').on('submit', authEvents.onDeleteSneaker)
 })
