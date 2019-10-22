@@ -12,6 +12,7 @@ $(() => {
   $('#update-sneaker').hide()
   $('#total-sneakers').hide()
   $('#delete-sneaker').hide()
+  $('#sneaker-message').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)

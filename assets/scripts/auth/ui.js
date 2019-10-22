@@ -76,7 +76,6 @@ const onDeleteSneakerFailure = () => {
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
   $('#message').css('color', 'green')
-  $('#sign-up').hide()
 }
 
 const onSignUpFailure = () => {
@@ -88,7 +87,7 @@ const onSignInSuccess = function (response) {
   successMessage('Signed in successfully')
   store.user = response.user
   $('#message').css('color', 'green')
-  $('#sign-up, #sign-in').hide()
+  $('#sign-up, #container, #sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
   $('#create-sneaker').show()
@@ -116,19 +115,32 @@ const onSignOutSuccess = responseData => {
   successMessage('Signed out successfully!')
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#container').show()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#create-sneaker').hide()
   $('#update-sneaker').hide()
   $('#total-sneakers').hide()
   $('#sneaker-message').hide()
-  $('#delete-sneakers').hide()
+  $('#delete-sneaker').hide()
 }
 
 const onSignOutFailure = function () {
   failureMessage('Sign out failed')
   $('#message').css('color', 'red')
 }
+
+const signUpButton = document.getElementById('signUp')
+const signInButton = document.getElementById('signIn')
+const container = document.getElementById('container')
+
+signUpButton.addEventListener('click', () => {
+  container.classList.add('right-panel-active')
+})
+
+signInButton.addEventListener('click', () => {
+  container.classList.remove('right-panel-active')
+})
 
 module.exports = {
   onSignUpSuccess,
