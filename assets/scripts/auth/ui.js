@@ -44,6 +44,7 @@ const onUpdateSneakerFailure = () => {
 // Get sneakers
 
 const onGetSneakerSuccess = function (data) {
+  successMessage('Your kicks!')
   $('#sneaker-message').html('')
   data.sneakers.forEach(sneaker => {
     const sneakerHTML = (`
@@ -55,6 +56,7 @@ const onGetSneakerSuccess = function (data) {
  `)
     $('#sneaker-message').append(sneakerHTML)
   })
+  $('#sneaker-message').show()
 }
 
 const onGetSneakerFailure = (data) => {

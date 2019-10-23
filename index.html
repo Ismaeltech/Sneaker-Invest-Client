@@ -14,9 +14,14 @@
       <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     </head>
+
     <body>
+
       <div class="header">
-      <h2 class="log-title">Sneaker  Invest</h2>
+        <h1 class="log-title">Sneaker Invest</h1>
+
+      </div>
+      <!--
       <input type="checkbox" id="chk">
       <label for="chk" class="show-menu-btn">
         <i class="fas fa-ellipsis-h"></i>
@@ -32,12 +37,12 @@
           <i class="fas fa-times"></i>
         </label>
       </ul>
-    </div>
+    </div> -->
 
-<div class="content">
+<!-- <div class="content">
 
 
-</div>
+</div> -->
 <!-- <video autoplay muted loop id="myVideo">
   <source src="/styles/sneakerinvest.mp4" type="video/mp4">
 </video> -->
@@ -96,12 +101,11 @@
       		</div>
       	</div>
       </div>
-
       <form class="create-snk" id="create-sneaker">
         <legend>Add Sneaker</legend>
-        <input name="sneaker[brand]" type="text" placeholder="Brand">
-        <input name="sneaker[name]"type="text" placeholder="Name" >
-        <input name="sneaker[price]" min="0" type="number" placeholder="price" >
+        <input name="sneaker[brand]" type="text" placeholder="Brand" required>
+        <input name="sneaker[name]"type="text" placeholder="Name"required >
+        <input name="sneaker[price]" min="0" type="number" placeholder="price" required>
         <button class="sneaker-button" type="submit">Submit</button>
       </form>
 
@@ -113,7 +117,9 @@
         <button class="sneaker-button" type="submit">Edit</button>
       </form>
 
-
+      <div>
+      <div id="sneaker-message"></div>
+      </div>
       <form class="create-snk" id="total-sneakers" >
         <legend>Los Sneakers</legend>
         <button class="sneaker-button" type="submit">My Sneakers</button>
