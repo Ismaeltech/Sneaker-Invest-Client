@@ -15,6 +15,8 @@ const failureMessage = function (newText) {
   $('form').trigger('reset')
   $('#message').addClass('failure')
   $('#message').removeClass('success')
+  $('#message').show(500)
+  $('#message').fadeOut(2000)
 }
 
 // Create sneakers
