@@ -2,12 +2,20 @@
 
 ## Functionality
 
+This application will serve as a tool for users to track their sneakers inventory or collection. By allowing users to input details about each sneaker, before it stored in their account. While also allowing them to update any sneaker in their catalogue.
+
 ## List of Technologies Used
 
-HTML
-CSS
-Javascript
-AJAX
+- HTML
+- CSS
+- Javascript
+- AJAX
+
+## Repos and Live Links
+
+- [Back End Repo](https://github.com/Ismaeltech/Sneaker-Invest-Backend-api)
+- [Heroku Deployed Back End](https://protected-citadel-72186.herokuapp.com/)
+- [Deployed Front End Client](https://ismaeltech.github.io/Sneaker-Invest-Client/)
 
 ## User Stories
 - As a user I want to be able to add a sneaker.
