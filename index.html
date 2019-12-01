@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Sneaker Invest</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://kit.fontawesome.com/6a457a4271.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+      <div class="header">
+        <h1 class="log-title">Sneaker Invest</h1>
+
+      </div>
+      <h4 id="message"></h4>
+
+      <!--
+      <input type="checkbox" id="chk">
+      <label for="chk" class="show-menu-btn">
+        <i class="fas fa-ellipsis-h"></i>
+      </label>
+
+      <ul class="nav-menu">
+        <a class="invest-nav" href="#">HOMEPAGE</a>
+        <a class="invest-nav" href="#">PRODUCTS</a>
+        <a class="invest-nav" href="#">JORDANS</a>
+        <a class="invest-nav" href="#">SNEAKER MARKET</a>
+        <a class="invest-nav" href="#">CONTACT</a>
+        <label for="chk" class="hide-menu-btn">
+          <i class="fas fa-times"></i>
+        </label>
+      </ul>
+    </div> -->
+
+<!-- <div class="content">
+
+
+</div> -->
+<!-- <video autoplay muted loop id="myVideo">
+  <source src="/styles/sneakerinvest.mp4" type="video/mp4">
+</video> -->
+
+      <!-- sign-up/ sign-in styling -->
+
+      <div class="container" id="container">
+      	<div class="form-container sign-up-container">
+      		<form action="#" id="sign-up">
+      			<h1>Create Account</h1>
+      			<div class="social-container">
+      				<a href="http://wwww.facebook.com/" target="_blank"class="social"><i class="fab fa-facebook-f"></i></a>
+      				<a href="http://www.myaccount.google.com/" target="_blank"class="social"><i class="fab fa-google-plus-g"></i></a>
+      				<a href="http://www.linkedin.com/" target="_blank" class="social"><i class="fab fa-linkedin-in"></i></a>
+      			</div>
+      			<span>or use your email for registration</span>
+            <input type="email" name="credentials[email]" placeholder="Enter Email" required>
+            <input type="password" name="credentials[password]" placeholder="Enter Password" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Enter password again" required>
+      			<button type="submit">Sign Up</button>
+      		</form>
+      	</div>
+
+      	<div class="form-container sign-in-container">
+      		<form action="#" id="sign-in">
+      			<h1>Sign in</h1>
+      			<div class="social-container">
+      				<a href="https://www.facebook.com/" target="_blank" class="social"><i class="fab fa-facebook-f"></i></a>
+      				<a href="https://myaccount.google.com/" target="_blank" class="social"><i class="fab fa-google-plus-g"></i></a>
+      				<a href="https://www.linkedin.com/" target="_blank" class="social"><i class="fab fa-linkedin-in"></i></a>
+      			</div>
+      			<span>or use your account</span>
+      			<input type="email" name="credentials[email]" placeholder="Email">
+      			<input type="password" name="credentials[password]" placeholder="Password">
+      			<a href="#">Forgot your password?</a>
+      			<button type="submit">Sign In</button>
+      		</form>
+      	</div>
+      	<div class="overlay-container">
+      		<div class="overlay">
+      			<div class="overlay-panel overlay-left">
+      				<h1>Welcome Back!</h1>
+      				<p>To keep connected with us please login with your personal info</p>
+      				<button class="ghost" id="signIn">Sign In</button>
+      			</div>
+      			<div class="overlay-panel overlay-right">
+      				<h1>Hello, Friend!</h1>
+      				<p>Enter your personal details and start journey with us</p>
+      				<button class="ghost" id="signUp">Sign Up</button>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+      <form class="create-snk" id="create-sneaker">
+        <legend>Add Sneaker</legend>
+        <input name="sneaker[brand]" type="text" placeholder="Brand" required>
+        <input name="sneaker[name]"type="text" placeholder="Name"required >
+        <input name="sneaker[price]" min="0" type="number" placeholder="price" required>
+        <button class="sneaker-button" type="submit">Submit</button>
+      </form>
+
+      <form class="create-snk" id="update-sneaker">
+        <input name="sneaker[brand]" type="text" placeholder="Brand">
+        <input name="sneaker[name]"type="text" placeholder="Name" >
+        <input name="sneaker[price]" min="0" type="number" placeholder="price" >
+        <input name="sneaker[id]" type="number" placeholder='Sneaker Id'>
+        <button class="edit-button" type="submit">Edit</button>
+      </form>
+
+
+      <form class="create-snk" id="total-sneakers" >
+        <legend class="total-sneakers">My Sneakers</legend>
+        <button class="my-sneakers" type="submit">Sneakers</button>
+
+      </form>
+      <div class="content">
+      <div id="sneaker-message"></div>
+    </div>
+      <form class="create-snk" id="delete-sneaker" >
+        <input class="id-input"name="sneaker[id]" min="0" type="number" placeholder='Sneaker Id'>
+        <button class="delete-button" type="submit">Delete Sneaker</button>
+
+      </form>
+
+      <br>
+      <form class="change-pw" id="change-password" >
+          <input class="input-pw" type="password" name="passwords[old]" placeholder="Enter old password">
+          <input class="input-pw" type="password" name="passwords[new]" placeholder="Enter new Password" >
+          <button class="change-signout">Change Password</button>
+      </form>
+<br>
+            <form class="auth-signout" id="sign-out" >
+              <button class="change-signout">Sign Out</button>
+            </form>
+    </body>
+</html>
