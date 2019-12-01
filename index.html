@@ -21,6 +21,8 @@
         <h1 class="log-title">Sneaker Invest</h1>
 
       </div>
+      <h4 id="message"></h4>
+
       <!--
       <input type="checkbox" id="chk">
       <label for="chk" class="show-menu-btn">
@@ -48,11 +50,6 @@
 </video> -->
 
       <!-- sign-up/ sign-in styling -->
-
-      <h4 id="message"></h4>
-      <div>
-      <div id="sneaker-message"></div>
-    </div>
 
       <div class="container" id="container">
       	<div class="form-container sign-up-container">
@@ -114,20 +111,21 @@
         <input name="sneaker[name]"type="text" placeholder="Name" >
         <input name="sneaker[price]" min="0" type="number" placeholder="price" >
         <input name="sneaker[id]" type="number" placeholder='Sneaker Id'>
-        <button class="sneaker-button" type="submit">Edit</button>
+        <button class="edit-button" type="submit">Edit</button>
       </form>
 
-      <div>
-      <div id="sneaker-message"></div>
-      </div>
+
       <form class="create-snk" id="total-sneakers" >
-        <legend>Los Sneakers</legend>
-        <button class="sneaker-button" type="submit">My Sneakers</button>
+        <legend class="total-sneakers">My Sneakers</legend>
+        <button class="my-sneakers" type="submit">Sneakers</button>
 
       </form>
+      <div class="content">
+      <div id="sneaker-message"></div>
+    </div>
       <form class="create-snk" id="delete-sneaker" >
-        <input name="sneaker[id]" min="0" type="number" placeholder='Sneaker Id'>
-        <button class="sneaker-button" type="submit">Delete Sneaker</button>
+        <input class="id-input"name="sneaker[id]" min="0" type="number" placeholder='Sneaker Id'>
+        <button class="delete-button" type="submit">Delete Sneaker</button>
 
       </form>
 

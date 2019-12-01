@@ -1,0 +1,14 @@
+{{#each this as |sneaker|}}
+
+
+ {{#sneaker}}
+ <div class="get-sneakers">
+   <!-- <div data-id="{{id}}" class="names"><strong>Name: </strong> {{first_name}} {{last_name}}</div> -->
+   <div class="brand"><strong>Brand: </strong> {{brand}}</div>
+   <div class="name"><strong>Name: </strong>{{name}}</div>
+   <div class="price"><strong>Price: </strong>{{price}}</div>
+   <div class="id"><strong>Sneaker ID: </strong>{{id}}</div>
+ </div>
+ {{/sneaker}}
+
+{{/each}}

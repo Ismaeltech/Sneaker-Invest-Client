@@ -18,6 +18,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
+  background-position: center;
 }
 
 h1 {
@@ -59,6 +60,72 @@ button {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+}
+
+.sneaker-button {
+  border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.edit-button {
+  border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 55px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.my-sneakers {
+  border-radius: 22px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+  padding: 13px 33.2px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  position: relative;
+  left: 12.5rem;
+}
+
+.total-sneakers {
+  position: relative;
+  right: 17rem;
+}
+
+.delete-button {
+  border-radius: 22px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+  padding: 5px 30px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  position: relative;
+  left: 12.5rem;
+}
+
+.id-input {
+  position: relative;
+  left: 12.5rem;
 }
 
 button:active {
@@ -239,10 +306,9 @@ color: black;
 .log-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 550;
-  line-height: 1px;
-  float: left;
-  font-size: 80px;
-  padding-bottom: 450px;
+  font-size: 70px;
+  position: static;
+  margin-bottom: 5rem;
 }
 
 // .invest-nav {
@@ -358,6 +424,21 @@ legend {
 
 .change-pw .auth-signout .create-snk {
   margin-top: 200px;
+}
+
+.get-sneakers {
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #000000;
+  padding: 10px;
+  margin: 12px;
+
+}
+
+.content {
+  overflow: scroll;
 }
 //
 // .create-snk legend {

@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store')
+const showSneakersTemplate = require('../templates/helpers/sneaker-listing.handlebars')
 
 const successMessage = function (newText) {
   $('#message').html(newText)
@@ -47,18 +48,12 @@ const onUpdateSneakerFailure = () => {
 
 const onGetSneakerSuccess = function (data) {
   successMessage('Your kicks!')
-  $('#sneaker-message').html('')
-  data.sneakers.forEach(sneaker => {
-    const sneakerHTML = (`
- <p>ID: ${sneaker.id}</p>
- <p>Brand: ${sneaker.brand}</p>
- <p>Name: ${sneaker.name}</p>
- <p>Price: ${sneaker.price}</p>
-  <br>
- `)
-    $('#sneaker-message').append(sneakerHTML)
-  })
-  $('#sneaker-message').show()
+  const showSneakersHtml = showSneakersTemplate({ sneakers: data.sneakers })
+  $('.content').html(showSneakersHtml)
+  $('#sneaker-message').show(500)
+  setTimeout(function () {
+    $('#run-message').fadeOut().empty()
+  }, 2000)
 }
 
 const onGetSneakerFailure = (data) => {
@@ -127,6 +122,7 @@ const onSignOutSuccess = responseData => {
   $('#total-sneakers').hide()
   $('#sneaker-message').hide()
   $('#delete-sneaker').hide()
+  $('.content').hide()
 }
 
 const onSignOutFailure = function () {
